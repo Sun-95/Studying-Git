@@ -1,7 +1,7 @@
 <h1>Part I: Git basics<h1>
 <h2>2. Creating a project</h2>
 <h3>1) Create a “Hello, World!” page</h3>
-I started with an empty directory and added an empty subdirectory called work and then created a hello.html file in it. [Screenshot 2.1] (screenshots/2.1.png)
+I started with an empty directory and added an empty subdirectory called work and then created a hello.html file in it. [Screenshot 2.1](screenshots/2.1.png)
 
 <h3>2) Create a repository</h3>
 So there is a directory that contains one file. Ran git init to create a Git repository from this directory.[Screenshot 2.2](screenshots/2.2.png)
