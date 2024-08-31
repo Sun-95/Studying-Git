@@ -1,13 +1,7 @@
 **2. Creating a project**
 1) Create a “Hello, World!” page
-Get started in an empty directory (for example, repositories, if you downloaded the file from the previous step) and add an empty subdirectory named work, then create a hello.html file in it with the following contents.
-[Screenshot 2.1](screenshots/2.1.png)
-Run
-mkdir work
-cd work
-touch hello.html
-File: hello.html
-Hello, World!
+I started with an empty directory and added an empty subdirectory called work and then created a hello.html file in it. [Screenshot 2.1](screenshots/2.1.png)
+
 02Create a repository
 So you have a directory that contains one file. Run git init in order to create a Git repo from that directory.
 
