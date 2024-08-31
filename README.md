@@ -1,7 +1,7 @@
 **2. Creating a project**
 1) Create a “Hello, World!” page
 Get started in an empty directory (for example, repositories, if you downloaded the file from the previous step) and add an empty subdirectory named work, then create a hello.html file in it with the following contents.
-[screenshots/2.1.png ]
+[Screenshot 2.1 (screenshots/2.1.png)]
 Run
 mkdir work
 cd work
