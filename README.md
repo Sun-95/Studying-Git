@@ -7,6 +7,6 @@ I started with an empty directory and added an empty subdirectory called work an
 So there is a directory that contains one file. Ran git init to create a Git repository from this directory.[Screenshot 2.2](screenshots/2.2.png)
 
 <h3>3) Add the page to the repository</h3>
-Now let's add the “Hello, World” page to the repository.[Screenshot 2.3](screenshots/2.2.png)
+Now let's add the “Hello, World” page to the repository.[Screenshot 2.3](screenshots/2.3.png)
 
 
