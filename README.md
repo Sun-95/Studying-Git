@@ -1,25 +1,12 @@
-**2. Creating a project**
-<h2> 1) Create a “Hello, World!” page </h2>
+<h1>Part I: Git basics<h1>
+<h2>2. Creating a project</h2>
+<h3>1) Create a “Hello, World!” page</h3>
 I started with an empty directory and added an empty subdirectory called work and then created a hello.html file in it. [Screenshot 2.1](screenshots/2.1.png)
 
-02Create a repository
-So you have a directory that contains one file. Run git init in order to create a Git repo from that directory.
+<h3>2) Create a repository</h3>
+So there is a directory that contains one file. Ran git init to create a Git repository from this directory.[Screenshot 2.2](screenshots/2.2.png)
 
-Run
-git init
-Result
-Initialized empty Git repository in /home/alex/githowto/repositories/work/.git/
-03Add the page to the repository
-Now let's add the “Hello, World” page to the repository.
+<h3>3) Add the page to the repository</h3>
+Now let's add the “Hello, World” page to the repository.[Screenshot 2.3](screenshots/2.2.png)
 
-Run
-git add hello.html
-git commit -m "Initial Commit"
-You will see:
 
-Result
-$ git add hello.html
-$ git commit -m "Initial commit"
-[main (root-commit) 5836970] Initial commit
- 1 file changed, 1 insertion(+)
- create mode 100644 hello.html
