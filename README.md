@@ -1,5 +1,5 @@
 **2. Creating a project**
-1) Create a “Hello, World!” page /n
+/n1) Create a “Hello, World!” page/n
 I started with an empty directory and added an empty subdirectory called work and then created a hello.html file in it. [Screenshot 2.1](screenshots/2.1.png)
 
 02Create a repository
