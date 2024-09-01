@@ -98,6 +98,81 @@ The reset command resets the staging area to HEAD. This clears the staging area 
 <h3>4) Switch to commit version</h3>
 We can use the checkout command to remove unwanted changes from working directory. <a href="screenshots/13.4.png)">Screenshot 13.4</a>
 
+<h2>14. Cancelling commits</h2>
+<h3>1) Edit the file and make a commit</h3>
+Replace hello.html with the following file. <a href="screenshots/14.1.1.png)">Screenshot 14.1.1</a>
+<a href="screenshots/14.1.2.png)">Screenshot 14.1.2</a>
+<h3>2) Make a commit with new changes that discard previous changes</h3>
+To cancel the commit, we need to create a commit that deletes the changes saved by unwanted commit. <a href="screenshots/14.2.png)">Screenshot 14.2</a>
+<h3>3) Check the log</h3>
+Checking the log shows the unwanted cancellations and commits in our repository. <a href="screenshots/14.3.png)">Screenshot 14.3</a>
+
+<h2>15. Removing a commit from a branch</h2>
+<h3>1) Mark this branch first</h3>
+Let us do a quick scan of our commit history. Let us mark the last commit with tag, so you can find it after removing a commit(s). <a href="screenshots/15.1.png)">Screenshot 15.1</a>
+<h3>2) Reset commit to before oops</h3>
+As the branch has a tag, we can use the tag name in the reset command. <a href="screenshots/15.2.png)">Screenshot 15.2</a> Our main branch is pointing at commit v1 and the "Revert Oops" and "Oops" commits no longer exist in the branch. The --hard parameter makes the working directory reflect the new branch head.
+<h3>3) Nothing is ever lost</h3>
+What happened to the wrong commits? They are still in the repository. Actually, we can still refer to them. Let us take a look at all commits. <a href="screenshots/15.3.png)">Screenshot 15.3</a> We can see that the wrong commits are not gone. They are not listed in the main branch anymore but still remain in the repository. They would still be in the repository if we did not tag them, but then we could reference them only by their hashes.
+
+<h2>16. Removing the oops tag</h2>
+<h3>1) Removal of the oops tag</h3>
+The oops tag has performed its function. Let us remove that tag and permit the garbage collector to delete referenced commit. <a href="screenshots/16.1.png)">Screenshot 16.1</a> The oops tag will no longer appear in the repository.
+
+<h2>17. Amending commits</h2>
+<h3>1) Change the page and commit</h3>
+Put an author comment on the page. <a href="screenshots/17.1.1.png)">Screenshot 17.1.1</a>
+<a href="screenshots/17.1.2.png)">Screenshot 17.1.2</a>
+<h3>2) Oops... email required</h3>
+After making the commit you understand that every good comment should include the author's email. Edit the hello.html page to provide an email. <a href="screenshots/17.2.png)">Screenshot 17.2</a>
+<h3>3) Change the previous commit</h3>
+We do not want to create another commit for adding the email address. Let us change the previous commit and add an email address. <a href="screenshots/17.3.png)">Screenshot 17.3</a>
+<h3>4) View history</h3>
+The new "author/email" commit replaces the original "author" commit. The same effect can be achieved by resetting the last commit in the branch, and recommitting new changes. <a href="screenshots/17.4.png)">Screenshot 17.4</a>
+
+<h2>18. Creating a branch</h2>
+<h3>1) Create a branch</h3>
+It is time to make our page more stylish with a touch of CSS. We'll develop this feature in a new branch called style. <a href="screenshots/18.1.png)">Screenshot 18.1</a>
+<h3>2) Add the style.css file</h3>
+<a href="screenshots/18.2.1.png)">Screenshot 18.2.1</a> <a href="screenshots/18.2.2.png)">Screenshot 18.2.2</a>
+<h3>3) Change hello.html to use style.css</h3>
+<a href="screenshots/18.3.1.png)">Screenshot 18.3.1</a> <a href="screenshots/18.3.2.png)">Screenshot 18.3.2</a>
+
+<h2>19. Switching branches</h2>
+Now our project has two branches. <a href="screenshots/19.0.png)">Screenshot 19.0</a>
+<h3>1) Switching to the main branch</h3>
+To switch between branches, use the git switch command. <a href="screenshots/19.1.png)">Screenshot 19.1</a>
+<h3>2) Let us return to the style branch</h3>
+We are back to the style branch. As you can see, our CSS-related changes are present. <a href="screenshots/19.2.png)">Screenshot 19.2</a>
+
+<h2>20. Moving files</h2>
+<h3>1) Examining the history of changes in a specific file</h3>
+Let's take a look at the change log for the hello.html file before we proceed with renaming it. <a href="screenshots/20.1.png)">Screenshot 20.1</a>
+<h3>2) Comparing different versions of a specific file</h3>
+The show command is used to display the changes in a specific commit. Let's examine the changes in the hello.html file in the commit tagged with v1. <a href="screenshots/20.2.png)">Screenshot 20.2</a>
+<h3>3) Renaming hello.html</h3>
+Let's proceed to rename our hello.html file to index.html using the standard mv command and observe the outcome. <a href="screenshots/20.3.1.png)">Screenshot 20.3.1</a> Git interprets our modification as if we've deleted the file and created a new one. We need to inform Git that we've renamed the file, not deleted and created a new one. <a href="screenshots/20.3.2.png)">Screenshot 20.3.2</a>
+<h3>4) Safely moving style.css</h3>
+Let's move our style.css file to the css directory. This time, however, we'll use the git mv command to ensure the move is recorded in Git's history as a move, not as a deletion and addition of a new file. <a href="screenshots/20.4.1.png)">Screenshot 20.4.1</a> Now, let's commit our changes and examine the change history of the css/styles.css file. To see the file's history prior to its relocation, we'll need to include the --follow option. Let's execute both versions of the command to understand the difference. <a href="screenshots/20.4.2.png)">Screenshot 20.4.2</a>
+
+<h2>21. Changes in the main branch</h2>
+<h3>1) Commit the README file to the main branch</h3>
+We are currently in the style branch. The README file is not part of this branch, so we must switch to the main branch before committing the changes. <a href="screenshots/21.1.png)">Screenshot 21.1</a>
+
+<h2>21. Viewing diverging branches</h2>
+<h3>1) View current branches</h3>
+We now have two diverging branches in the repository. Use the following log command to view the branches and how they diverge. <a href="screenshots/22.1.png)">Screenshot 22.1</a>
+
+<h2>23. Merging</h2>
+<h3>1) Merge the branches</h3>
+Merging brings changes from two branches into one. Let us go back to the style branch and merge it with main. <a href="screenshots/23.1.png)">Screenshot 23.1</a>
+
+<h2>24. Creating a merge conflict</h2>
+<h3>1) Switch back to the main and create conflict</h3>
+In our main branch, the page is still called hello.html. Switch back to the main branch and make the following changes. <a href="screenshots/24.1.1.png)">Screenshot 24.1.1</a> <a href="screenshots/24.1.2.png)">Screenshot 24.1.2</a>
+<h3>2) View branches</h3>
+After the "Added README" commit, the main branch has been merged with the style branch, but there is an additional main commit, which was not merged back to the style branch. <a href="screenshots/24.2.png)">Screenshot 24.2</a>
+
 
 
 
