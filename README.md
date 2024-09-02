@@ -173,6 +173,38 @@ In our main branch, the page is still called hello.html. Switch back to the main
 <h3>2) View branches</h3>
 After the "Added README" commit, the main branch has been merged with the style branch, but there is an additional main commit, which was not merged back to the style branch. <a href="screenshots/24.2.png">Screenshot 24.2</a>
 
+<h2>25. Resolving conflicts</h2>
+<h3>1) Merge the main branch into the style branch</h3>
+Let us return to the style branch and merge in all the recent changes from the main. <a href="screenshots/25.1.1.png">Screenshot 25.1.1</a> It seems that we have a conflict. Let us see what Git has to say about it. <a href="screenshots/25.1.2.png">Screenshot 25.1.2</a> If you open the index.html you will see. <a href="screenshots/25.1.3.png">Screenshot 25.1.3</a>
+<h3>2) Aborting merge</h3>
+Jumping straight to the conflict resolution may not be a best strategy. The conflict may be caused by the changes you are unaware of. Or the changes are too significant to address right away. For this reason, Git allows you to abort the merge and return to the state before the merge. To do that, you can use the git merge --abort command, as suggested by status command we ran earlier. <a href="screenshots/25.2.png">Screenshot 25.2</a>
+<h3>3) Resolving the conflict</h3>
+After some meditation, we are ready to handle the conflict. Let us rerun the merge. <a href="screenshots/25.3.png">Screenshot 25.3</a>
+<h3>4) Commit the resolved conflict</h3>
+Let us look at the current state of our repository and make sure that everything is okay. <a href="screenshots/25.4.png">Screenshot 25.4</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
