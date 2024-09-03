@@ -183,31 +183,74 @@ After some meditation, we are ready to handle the conflict. Let us rerun the mer
 <h3>4) Commit the resolved conflict</h3>
 Let us look at the current state of our repository and make sure that everything is okay. <a href="screenshots/25.4.png">Screenshot 25.4</a>
 
+<h2>27. Resetting the style branch</h2>
+<h3>1) Resetting the style branch</h3>
+Let us go to the style branch to the point before we had merged it with the main branch. We can reset the branch to any commit. In fact, the reset command can change the branch pointer to point to any commit in the tree. Here, we want to go back in the style branch to a point before merging with the main. We have to find the last commit before the merge. <a href="screenshots/27.1.1.png">Screenshot 27.1.1</a> We can see from the output that the "Renamed hello.html; moved style.css" commit was the latest on the style branch prior to the first merging with main. Let us reset the style branch to this commit. To reference that commit, we either use its hash, or deduct that this commit is 2 commits before the HEAD, or HEAD~2 in Git notation. <a href="screenshots/27.1.2.png">Screenshot 27.1.2</a>
+<h3>2) Check the branch</h3>
+Now, let's check the log of the style branch. There should be no merge commits in the log. <a href="screenshots/27.2.png">Screenshot 27.2</a>
+
+<h2>28. Rebase</h2>
+<h3>1) Rebase the style branch onto main </h3>
+<a href="screenshots/28.1.1.png">Screenshot 28.1.1</a> Note that the conflict is in hello.html, not in index.html as the last time. It is because rebase was in the process of applying the style changes on top of the main branch. The file hello.html hasn't been renamed in main yet, so it still has its old name. When merging, we would have a "reverse" conflict. During the merge, the changes of the main branch are applied on top of the style branch. The style branch has the file renamed, so the conflict would be in index.html. <a href="screenshots/28.1.2.png">Screenshot 28.1.2</a>
+<h3>2) Resolve the conflict</h3>
+The conflict itself can be resolved in the same way we did before. First, we edit the hello.html file to meet our expectations. But after that, we don't need to commit the changes. We can just add the file to the index and continue the rebase process. It allows me to fix conflicts without creating a bunch of ugly merge conflicts. For simplicity's sake, we can add all files using ., which stands for the path of the current directory. Git interprets this as "add all files in the current directory and its subdirectories". <a href="screenshots/28.2.1.png">Screenshot 28.2.1</a> Upon saving changes, Git will finish the rebase process, and we can proceed with the following commands. <a href="screenshots/28.2.2.png">Screenshot 28.2.2</a>
 
 
+<h1>Part II: Working with multiple repositories<h1>
 
+<h2>30. Cloning repositories</h2>
+<h3>1) Go to your repositories directory</h3>
+At this point you should be in your repositories directory. It should contain a single repository named work. <a href="screenshots/30.1.png">Screenshot 30.1</a>
+<h3>2) Create a clone of the work repository</h3>
+Let's create a clone of the repository. <a href="screenshots/30.2.png">Screenshot 30.2</a>
 
+<h2>31. Examine the cloned repository</h2>
+<h3>1) Viewing the cloned repository</h3>
+Let's have a look at our cloned repository. <a href="screenshots/31.1.png">Screenshot 31.1</a> We will see a list of all files in the top level of the original repository .
+<h3>2) View the history of the cloned repository</h3>
+We will see a list of all the commits in the new repository, and it should match the commit history of the original repository. The only difference should be in the names of the branches. <a href="screenshots/31.2.png">Screenshot 31.2</a>
 
+<h2>32. What is origin?</h2>
+<a href="screenshots/32.1.png">Screenshot 32.1</a> We see that the cloned repository knows the default name of the remote repository. To get more information about origin. <a href="screenshots/31.2.png">Screenshot 31.2</a> We can see that the origin of the remote repository is the original work repo. Remote repos are typically stored on a separate machine or a centralized server. However, as we see, they can also point to a repository on the same machine.
 
+<h2>33. Remote branches</h2>
+Let's take a look at the branches in our cloned repository. <a href="screenshots/33.0.png">Screenshot 33.0</a> As we can see only the main branch is listed in it. git branch only lists the local branches by default.
+<h3>1) List of the remote branches</h3>
+To see all the branches, need to use the following command. <a href="screenshots/33.1.png">Screenshot 33.1</a> Git lists all the branches from the original repo, but the remote repository branches are not treated as local ones. 
 
+<h2>34. Changing the original repository</h2>
+<h3>1) Make a change in the original work repository</h3>
+<a href="screenshots/34.1.1.png">Screenshot 34.1.1</a> We are now in the work repository.
+Make the following changes to the README file. <a href="screenshots/34.1.2.png">Screenshot 34.1.2</a> Now add and commit this change. <a href="screenshots/34.1.3.png">Screenshot 34.1.3</a>
 
+<h2>35. Fetching changes</h2>
+<a href="screenshots/35.0.png">Screenshot 35.0</a> We are now in the home repository.
+<h3>1) Check the README</h3>
+We can show that the cloned README file has not been changed. <a href="screenshots/35.1.png">Screenshot 35.1</a> No changes, as you can see.
 
+<h2>36. Merging pulled changes</h2>
+<h3>1) Merge the pulled changes into the local main branch</h3>
+<a href="screenshots/36.1.png">Screenshot 36.1</a>
+<h3>2) Check the README again</h3>
+Now we should see the changes. <a href="screenshots/36.2.png">Screenshot 36.2</a> These are the changes. 
 
+<h2>37. Adding a tracking branch</h2>
+<h3>1) Add a local branch tracking the remote branch</h3>
+<a href="screenshots/37.1.png">Screenshot 37.1</a> Now we can see the style branch in the branch list and log.
 
+<h2>38. Bare repos</h2>
+<h3>1) Creating a bare repository.</h3>
+<a href="screenshots/38.1.png">Screenshot 38.1</a> Now we are in the repositories directory. The convention is that repositories ending in .git are bare repositories. We can see that there is no working directory in the work.git repo. Essentially it is nothing but the .git directory of a regular repo.
 
+<h2>39. Adding a remote repository</h2>
+Let's add the work.git repository to our original repository. <a href="screenshots/39.0.png">Screenshot 39.0</a>
 
+<h2>40. Pushing changes</h2>
+Let’s start by creating a change to be pushed. Edit the README and commit it. <a href="screenshots/40.0.1.png">Screenshot 40.0.1</a> <a href="screenshots/40.0.2.png">Screenshot 40.0.2</a>  Now send changes to the shared repository. <a href="screenshots/40.0.3.png">Screenshot 40.0.3</a> The shared repository is the one receiving changes sent by us.
 
+<h2>41. Pulling shared changes</h2>
+Quickly switch to the home repository and pull the changes we just sent to the shared repository. <a href="screenshots/41.0.1.png">Screenshot 41.0.1</a> Continue with... <a href="screenshots/41.0.2.png">Screenshot 41.0.2</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h2>42. Hosting your Git repository</h2>
+<h3>1) Launch the Git server</h3>
+<a href="screenshots/42.1.1.png">Screenshot 42.1.1</a> Now, go to your repositories directory in a separate terminal window. <a href="screenshots/42.1.2.png">Screenshot 42.1.2</a> You will find a copy of the work project.
