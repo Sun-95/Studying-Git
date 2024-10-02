@@ -345,3 +345,273 @@ Use the `git remote -v` command to view the list of remote repositories.
 ### 5) Remove a remote
 Use the `git remote remove` command to remove a remote repository.  
 ![Screenshot 23.5](./screenshots/23.5.png)
+
+## 24. Cloning a repository
+
+### 1) Clone a remote repository
+Use the `git clone` command to clone a remote repository to your local machine.  
+![Screenshot 24.1](./screenshots/24.1.png)
+
+### 2) Check the cloned repository
+After cloning, navigate to the cloned directory and check its contents.  
+![Screenshot 24.2](./screenshots/24.2.png)
+
+## 25. Forking a repository
+
+### 1) Fork a repository on GitHub
+Navigate to the repository on GitHub and use the "Fork" button to fork it to your account.  
+![Screenshot 25.1](./screenshots/25.1.png)
+
+### 2) Clone your forked repository
+Once forked, clone the repository to your local machine using `git clone`.  
+![Screenshot 25.2](./screenshots/25.2.png)
+
+### 3) Add the original repository as a remote
+After cloning, add the original repository as an additional remote to fetch updates.  
+![Screenshot 25.3](./screenshots/25.3.png)
+
+## 26. Fetching and pulling updates from the original repository
+
+### 1) Fetch updates from the original repository
+Use the `git fetch` command to retrieve updates from the original repository (which you've added as a remote).  
+![Screenshot 26.1](./screenshots/26.1.png)
+
+### 2) Merge updates into your local branch
+Once fetched, merge the updates into your current branch using `git merge`.  
+![Screenshot 26.2](./screenshots/26.2.png)
+
+## 27. Contributing to an open-source project
+
+### 1) Make changes in a forked repository
+After forking and cloning a repository, make changes locally and commit them.  
+![Screenshot 27.1](./screenshots/27.1.png)
+
+### 2) Push changes to your forked repository
+Push the changes to your forked repository on GitHub using `git push`.  
+![Screenshot 27.2](./screenshots/27.2.png)
+
+### 3) Open a pull request
+Once the changes are pushed, open a pull request on GitHub to propose your changes to the original repository.  
+![Screenshot 27.3](./screenshots/27.3.png)
+
+## 28. Resetting changes
+
+### 1) Make changes to a file
+Make some changes to `hello.html` but don't commit them.  
+![Screenshot 28.1](./screenshots/28.1.png)
+
+### 2) Use git reset
+Use `git reset --hard` to discard the changes.  
+![Screenshot 28.2](./screenshots/28.2.png)
+
+### 3) Check the status
+After resetting, check the status to ensure the working directory is clean.  
+![Screenshot 28.3](./screenshots/28.3.png)
+
+## 29. Reverting commits
+
+### 1) Make a commit with changes
+Make a commit with some changes to `hello.html`.  
+![Screenshot 29.1](./screenshots/29.1.png)
+
+### 2) Use git revert
+Use `git revert` to undo the changes made in the commit, creating a new commit that reverts the previous changes.  
+![Screenshot 29.2](./screenshots/29.2.png)
+
+### 3) Check the log
+After reverting, check the log to see the new commit that undoes the previous one.  
+![Screenshot 29.3](./screenshots/29.3.png)
+
+## 30. Cherry-picking commits
+
+### 1) Create a new branch
+Create a new branch where you'll apply selected commits.  
+![Screenshot 30.1](./screenshots/30.1.png)
+
+### 2) Use git cherry-pick
+Use the `git cherry-pick` command to apply specific commits from another branch to the current one.  
+![Screenshot 30.2](./screenshots/30.2.png)
+
+### 3) Check the result
+After cherry-picking, check the log to ensure the selected commit(s) have been applied to the current branch.  
+![Screenshot 30.3](./screenshots/30.3.png)
+
+## 31. Using tags
+
+### 1) Create a new tag
+Use the `git tag` command to create a new tag for the current commit.  
+![Screenshot 31.1](./screenshots/31.1.png)
+
+### 2) View tags
+Use the `git tag` command to view all tags in the repository.  
+![Screenshot 31.2](./screenshots/31.2.png)
+
+### 3) Push tags to the remote
+Use `git push --tags` to push the created tags to the remote repository.  
+![Screenshot 31.3](./screenshots/31.3.png)
+
+## 32. Deleting a tag
+
+### 1) Delete a tag locally
+Use the `git tag -d` command to delete a tag locally.  
+![Screenshot 32.1](./screenshots/32.1.png)
+
+### 2) Delete a tag on the remote
+Use `git push origin --delete tagname` to delete a tag from the remote repository.  
+![Screenshot 32.2](./screenshots/32.2.png)
+
+## 33. Using submodules
+
+### 1) Add a submodule
+Use `git submodule add` to add a submodule to your repository.  
+![Screenshot 33.1](./screenshots/33.1.png)
+
+### 2) Initialize and update submodules
+After cloning a repository with submodules, run `git submodule init` and `git submodule update` to initialize and update them.  
+![Screenshot 33.2](./screenshots/33.2.png)
+
+### 3) Remove a submodule
+To remove a submodule, use the `git rm` command and delete the relevant entries in `.gitmodules` and `.git/config`.  
+![Screenshot 33.3](./screenshots/33.3.png)
+
+## 34. Working with large files
+
+### 1) Track large files with Git LFS
+Install Git LFS and use the `git lfs track` command to track large files.  
+![Screenshot 34.1](./screenshots/34.1.png)
+
+### 2) Push large files
+After tracking, add and commit the large files, then push them to the remote repository using Git LFS.  
+![Screenshot 34.2](./screenshots/34.2.png)
+
+### 3) Check LFS objects
+Use `git lfs ls-files` to list files being tracked by Git LFS.  
+![Screenshot 34.3](./screenshots/34.3.png)
+
+## 35. Rewriting history with git rebase
+
+### 1) Start an interactive rebase
+Use `git rebase -i HEAD~n` to start an interactive rebase where `n` is the number of commits to modify.  
+![Screenshot 35.1](./screenshots/35.1.png)
+
+### 2) Pick and squash commits
+In the interactive rebase editor, choose which commits to pick or squash by editing the file.  
+![Screenshot 35.2](./screenshots/35.2.png)
+
+### 3) Complete the rebase
+Once you've made your changes, save and close the editor to apply the rebase.  
+![Screenshot 35.3](./screenshots/35.3.png)
+
+## 36. Resolving merge conflicts
+
+### 1) Create a conflicting situation
+Modify the same line in a file on two different branches, then attempt to merge the branches.  
+![Screenshot 36.1](./screenshots/36.1.png)
+
+### 2) View the conflict
+Git will detect the conflict and notify you about it. Open the file to see the conflict markers.  
+![Screenshot 36.2](./screenshots/36.2.png)
+
+### 3) Resolve the conflict
+Manually resolve the conflict by editing the file, then add and commit the resolved file.  
+![Screenshot 36.3](./screenshots/36.3.png)
+
+## 37. Stashing changes
+
+### 1) Stash uncommitted changes
+Use `git stash` to temporarily store uncommitted changes in a stash.  
+![Screenshot 37.1](./screenshots/37.1.png)
+
+### 2) View stash list
+Use `git stash list` to see all stashed changes.  
+![Screenshot 37.2](./screenshots/37.2.png)
+
+### 3) Apply stashed changes
+Use `git stash apply` to apply the stashed changes back to your working directory.  
+![Screenshot 37.3](./screenshots/37.3.png)
+
+## 38. Bisecting to find bugs
+
+### 1) Start git bisect
+Use `git bisect start` to start a bisect session. Mark the current commit as bad and a known good commit.  
+![Screenshot 38.1](./screenshots/38.1.png)
+
+### 2) Mark commits
+Mark each commit as good or bad during the bisect process until you find the problematic commit.  
+![Screenshot 38.2](./screenshots/38.2.png)
+
+### 3) End bisect
+Once the bad commit is identified, use `git bisect reset` to end the bisect session.  
+![Screenshot 38.3](./screenshots/38.3.png)
+
+## 39. Using hooks
+
+### 1) Install a hook
+Navigate to the `.git/hooks/` directory and create or modify a hook script such as `pre-commit` or `post-commit`.  
+![Screenshot 39.1](./screenshots/39.1.png)
+
+### 2) Test the hook
+Make changes to your code and commit them to trigger the hook.  
+![Screenshot 39.2](./screenshots/39.2.png)
+
+## 40. Signing commits
+
+### 1) Configure GPG for commit signing
+Set up GPG on your machine and use `git config --global user.signingkey your-key-id` to configure signing.  
+![Screenshot 40.1](./screenshots/40.1.png)
+
+### 2) Sign commits
+Use `git commit -S` to sign a commit with your GPG key.  
+![Screenshot 40.2](./screenshots/40.2.png)
+
+### 3) Verify signed commits
+Use `git log --show-signature` to verify that commits have been properly signed.  
+![Screenshot 40.3](./screenshots/40.3.png)
+
+## 41. Using git blame
+
+### 1) Blame a file
+Use `git blame filename` to see who last modified each line of the file.  
+![Screenshot 41.1](./screenshots/41.1.png)
+
+### 2) Explore specific changes
+In the output, you can see the commit hash and author responsible for each line.  
+![Screenshot 41.2](./screenshots/41.2.png)
+
+## 42. Generating a patch
+
+### 1) Create a patch file
+Use `git format-patch` to generate patch files for a range of commits.  
+![Screenshot 42.1](./screenshots/42.1.png)
+
+### 2) Apply a patch
+Use `git apply` to apply a patch file to the repository.  
+![Screenshot 42.2](./screenshots/42.2.png)
+
+## 43. Working with GitHub Actions
+
+### 1) Set up a GitHub Actions workflow
+Create a `.github/workflows/` directory and add a YAML file to define a GitHub Actions workflow.  
+![Screenshot 43.1](./screenshots/43.1.png)
+
+### 2) Push changes to trigger the workflow
+Push your changes to GitHub, and the defined workflow will automatically run.  
+![Screenshot 43.2](./screenshots/43.2.png)
+
+### 3) View workflow results
+Navigate to the "Actions" tab on GitHub to see the results of the workflow execution.  
+![Screenshot 43.3](./screenshots/43.3.png)
+
+## 44. Managing multiple remotes
+
+### 1) Add a new remote
+Use `git remote add` to add a new remote repository.  
+![Screenshot 44.1](./screenshots/44.1.png)
+
+### 2) Fetch from multiple remotes
+You can use `git fetch` to retrieve updates from any of the configured remotes.  
+![Screenshot 44.2](./screenshots/44.2.png)
+
+### 3) Push to a specific remote
+Use `git push remote-name` to push changes to a specific remote repository.  
+![Screenshot 44.3](./screenshots/44.3.png)
