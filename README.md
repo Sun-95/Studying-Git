@@ -169,3 +169,179 @@ The reset command does not change the working directory. Therefore, the working 
 ### 4) Switch to commit version
 We can use the `checkout` command to remove unwanted changes from the working directory.  
 ![Screenshot 13.4](./screenshots/13.4.png)
+
+## 14. Viewing changes
+
+### 1) Add content to hello.html
+Make changes to the `hello.html` file.  
+![Screenshot 14.1](./screenshots/14.1.png)
+
+### 2) Use the diff command
+The `diff` command shows changes between the working directory and the repository version.  
+![Screenshot 14.2](./screenshots/14.2.png)
+
+### 3) Stage the changes
+Use the `git add` command to stage the changes, then check the status.  
+![Screenshot 14.3](./screenshots/14.3.png)
+
+### 4) View staged changes
+Use the `diff --cached` command to see staged changes.  
+![Screenshot 14.4](./screenshots/14.4.png)
+
+## 15. Ignoring files
+
+### 1) Create and edit .gitignore
+Create the `.gitignore` file. Add the `temp` directory and any files in it to `.gitignore`.  
+![Screenshot 15.1](./screenshots/15.1.png)
+
+### 2) Check the status
+Check the status.  
+![Screenshot 15.2](./screenshots/15.2.png)
+
+### 3) Add .gitignore to the repository
+Stage and commit the `.gitignore` file.  
+![Screenshot 15.3](./screenshots/15.3.png)
+
+### 4) Check the status again
+Run `git status` again to verify that the ignored files and directories are not being tracked.  
+![Screenshot 15.4](./screenshots/15.4.png)
+
+## 16. Configuring your repository
+
+### 1) Change your username
+Use the `git config` command to change your username and email for this repository.  
+![Screenshot 16.1](./screenshots/16.1.png)
+
+### 2) Check the configuration
+Use the `git config --list` command to verify that the configuration has been changed.  
+![Screenshot 16.2](./screenshots/16.2.png)
+
+## 17. Aliases
+
+### 1) Creating an alias for status
+Create an alias for the `git status` command, so you can use `git st`.  
+![Screenshot 17.1](./screenshots/17.1.png)
+
+### 2) Test the alias
+Run the new alias to verify that it works.  
+![Screenshot 17.2](./screenshots/17.2.png)
+
+## 18. Branching
+
+### 1) Check the current branch
+Use the `git branch` command to check which branch you're currently on.  
+![Screenshot 18.1](./screenshots/18.1.png)
+
+### 2) Create a new branch
+Create a new branch called `feature`.  
+![Screenshot 18.2](./screenshots/18.2.png)
+
+### 3) Check branches again
+Check the list of branches.  
+![Screenshot 18.3](./screenshots/18.3.png)
+
+### 4) Switch to the new branch
+Use the `git switch` command to switch to the `feature` branch.  
+![Screenshot 18.4](./screenshots/18.4.png)
+
+## 19. Merging
+
+### 1) Commit changes in feature branch
+Make changes to `hello.html` and commit them to the `feature` branch.  
+![Screenshot 19.1](./screenshots/19.1.png)
+
+### 2) Switch back to the main branch
+Use the `git switch` command to return to the `main` branch.  
+![Screenshot 19.2](./screenshots/19.2.png)
+
+### 3) Merge the feature branch
+Use the `git merge` command to merge the `feature` branch into the `main` branch.  
+![Screenshot 19.3](./screenshots/19.3.png)
+
+### 4) Resolve merge conflicts (if any)
+If there are merge conflicts, Git will notify you. Manually resolve them by editing the file(s), then add and commit the changes.  
+![Screenshot 19.4](./screenshots/19.4.png)
+
+### 5) Check the merge result
+After resolving conflicts, check the status and log to ensure the merge is successful.  
+![Screenshot 19.5](./screenshots/19.5.png)
+
+## 20. Rebasing
+
+### 1) Create and switch to a new branch
+Create a new branch called `experiment` and switch to it.  
+![Screenshot 20.1](./screenshots/20.1.png)
+
+### 2) Make changes in the experiment branch
+Edit `hello.html` in the `experiment` branch and commit the changes.  
+![Screenshot 20.2](./screenshots/20.2.png)
+
+### 3) Switch back to the feature branch
+Switch back to the `feature` branch.  
+![Screenshot 20.3](./screenshots/20.3.png)
+
+### 4) Rebase the feature branch onto experiment
+Use the `git rebase` command to rebase the `feature` branch onto the `experiment` branch.  
+![Screenshot 20.4](./screenshots/20.4.png)
+
+### 5) Resolve any rebase conflicts
+If there are conflicts, manually resolve them and continue the rebase process.  
+![Screenshot 20.5](./screenshots/20.5.png)
+
+### 6) Check the rebase result
+Check the status and log to ensure the rebase was successful.  
+![Screenshot 20.6](./screenshots/20.6.png)
+
+## 21. Stashing changes
+
+### 1) Make changes without committing
+Make changes to `hello.html` without committing them.  
+![Screenshot 21.1](./screenshots/21.1.png)
+
+### 2) Stash the changes
+Use the `git stash` command to temporarily save the changes.  
+![Screenshot 21.2](./screenshots/21.2.png)
+
+### 3) Check the status
+Check the status to verify that the changes have been stashed.  
+![Screenshot 21.3](./screenshots/21.3.png)
+
+### 4) Apply the stash
+Use the `git stash apply` command to retrieve the stashed changes.  
+![Screenshot 21.4](./screenshots/21.4.png)
+
+### 5) Commit the stashed changes
+After applying the stash, commit the changes.  
+![Screenshot 21.5](./screenshots/21.5.png)
+
+## 22. Deleting branches
+
+### 1) Delete a branch after merging
+After successfully merging the `feature` branch into `main`, delete the `feature` branch.  
+![Screenshot 22.1](./screenshots/22.1.png)
+
+### 2) Check the list of branches
+Check the list of branches to ensure the `feature` branch has been deleted.  
+![Screenshot 22.2](./screenshots/22.2.png)
+
+## 23. Working with remotes
+
+### 1) Add a remote repository
+Use the `git remote add` command to add a remote repository.  
+![Screenshot 23.1](./screenshots/23.1.png)
+
+### 2) Push to the remote
+Push the `main` branch to the remote repository.  
+![Screenshot 23.2](./screenshots/23.2.png)
+
+### 3) Pull from the remote
+Use the `git pull` command to fetch and merge changes from the remote repository.  
+![Screenshot 23.3](./screenshots/23.3.png)
+
+### 4) View remote repositories
+Use the `git remote -v` command to view the list of remote repositories.  
+![Screenshot 23.4](./screenshots/23.4.png)
+
+### 5) Remove a remote
+Use the `git remote remove` command to remove a remote repository.  
+![Screenshot 23.5](./screenshots/23.5.png)
