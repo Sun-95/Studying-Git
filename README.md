@@ -174,7 +174,8 @@ We can use the `checkout` command to remove unwanted changes from the working di
 
 ### 1) Add content to hello.html
 Make changes to the `hello.html` file.  
-![Screenshot 14.1](./screenshots/14.1.png)
+![Screenshot 14.1.1](./screenshots/14.1.1.png)
+![Screenshot 14.1.2](./screenshots/14.1.2.png)
 
 ### 2) Use the diff command
 The `diff` command shows changes between the working directory and the repository version.  
@@ -183,10 +184,6 @@ The `diff` command shows changes between the working directory and the repositor
 ### 3) Stage the changes
 Use the `git add` command to stage the changes, then check the status.  
 ![Screenshot 14.3](./screenshots/14.3.png)
-
-### 4) View staged changes
-Use the `diff --cached` command to see staged changes.  
-![Screenshot 14.4](./screenshots/14.4.png)
 
 ## 15. Ignoring files
 
